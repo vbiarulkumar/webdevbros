@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties version="1">
+  <includeClasses>
+    <classEntry path="webdevbros.utils.editors.ColorEditor"/>
+    <classEntry path="webdevbros.utils.editors.Editor"/>
+    <classEntry path="webdevbros.utils.editors.NumberEditor"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests>
+    <namespaceManifestEntry manifest="mxml-manifest.xml" namespace="http://www.webdevbros.net/"/>
+  </namespaceManifests>
+</flexLibProperties>

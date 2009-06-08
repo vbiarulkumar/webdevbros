@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:FormItem xmlns:mx="http://www.adobe.com/2006/mxml" width="100%">
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.core.UIComponent;
+			
+			public var targetComponent:UIComponent;
+			
+			protected function get value():Object {
+				return isStyle ? targetComponent.getStyle(label) : targetComponent[label];
+			}
+			
+			protected function get isStyle():Boolean {
+				return targetComponent.getStyle(label) != undefined;
+			}
+			
+			protected function set value(value:Object):void {
+				if (isStyle) targetComponent.setStyle(label, value);
+				else targetComponent[label] = value;
+			}
+			
+		]]>
+	</mx:Script>
+	
+</mx:FormItem>

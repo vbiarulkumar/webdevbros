@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Editor
+	xmlns="http://www.webdevbros.net/"
+	xmlns:mx="http://www.adobe.com/2006/mxml">
+	
+	<mx:Script>
+		<![CDATA[
+			
+			[Bindable] public var interval:Number = 1;
+			[Bindable] public var minimum:Number = 0;
+			[Bindable] public var maximum:Number = 100;
+			[Bindable] public var preview:Boolean = true;
+			
+			[Bindable] public var mode:String = "slider";
+			
+			public function set percentage(value:Boolean):void {
+				interval = 0.01;
+				minimum = 0;
+				maximum = 1;
+			}
+			
+			private function onCreationComplete(event:Event):void {
+				event.target.value = value;
+			}
+			
+			private function onChange(event:Event):void {
+				value = event.target.value;
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<mx:NumericStepper id="stepper" includeInLayout="{mode == 'stepper'}" visible="{stepper.includeInLayout}" stepSize="{interval}" minimum="{minimum}" maximum="{maximum}" change="onChange(event)" creationComplete="onCreationComplete(event)" width="80" /> 	
+	<mx:HSlider id="slider" showDataTip="true" includeInLayout="{!stepper.includeInLayout}" visible="{slider.includeInLayout}" minimum="{minimum}" liveDragging="{preview}" maximum="{maximum}" snapInterval="{interval}" change="onChange(event)" creationComplete="onCreationComplete(event)" width="80" />
+	
+</Editor>
