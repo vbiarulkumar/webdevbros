@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:webdevbros="http://www.webdevbros.net/"
+	xmlns:styleproxy="styleproxy.*">
+	
+	<mx:HBox width="100%" height="100%">
+		<!-- Editors calling myCustomComponent.setStyle(name, value) -->
+		<mx:Form>
+			<webdevbros:ColorEditor label="shapeColor" targetComponent="{myCustomComponent}" preview="true" />
+			<webdevbros:NumberEditor label="shapeAlpha" targetComponent="{myCustomComponent}" percentage="true" mode="slider" preview="true" />
+			<webdevbros:ColorEditor label="shapeBorderColor" targetComponent="{myCustomComponent}" preview="true" />
+			<webdevbros:NumberEditor label="shapeBorderThickness" targetComponent="{myCustomComponent}" maximum="20" interval="5" mode="stepper" />
+			<webdevbros:NumberEditor label="shapeCornerRadius" targetComponent="{myCustomComponent}" maximum="20" mode="slider" />
+		</mx:Form>
+		<!-- The custom degrafa component -->
+		<styleproxy:CustomDegrafaComponent id="myCustomComponent" width="80%" height="100%" />
+	</mx:HBox>
+	
+</mx:Application>

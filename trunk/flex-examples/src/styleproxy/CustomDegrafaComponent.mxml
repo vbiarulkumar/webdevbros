@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas styleName="defaultStyles"
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:degrafa="http://www.degrafa.com/2007"
+	xmlns:joshmcdonald="info.joshmcdonald.barra.utils.*">
+	
+	<!-- Detecting style changes -->
+	<mx:Script>
+		<![CDATA[
+			override public function styleChanged(styleProp:String) : void {
+			    super.styleChanged(styleProp);
+			    styleProxy.handleStyleChange(styleProp);
+			}
+		]]>
+	</mx:Script>
+	
+	<!-- Declaring the custom styles -->
+	<mx:Metadata>
+		[Style(name="shapeColor", type="uint", format="Color")]
+		[Style(name="shapeAlpha", type="Number")]
+		[Style(name="shapeBorderColor", type="uint", format="Color")]
+		[Style(name="shapeBorderThickness", type="Number")]
+		[Style(name="shapeCornerRadius", type="Number")]
+	</mx:Metadata>
+	
+	<!-- Initializing the default style values -->
+	<mx:Style>
+		.defaultStyles {
+			shape-color: red;
+			shape-alpha: .8;
+			shape-border-color: #000000;
+			shape-border-thickness: 3;
+			shape-corner-radius: 5;
+		}
+	</mx:Style>
+	
+	<!-- The style proxy -->
+	<joshmcdonald:StyleProxy id="styleProxy" />
+	
+	<!-- The custom degrafa shape, some properties are binded to custom styles -->
+	<degrafa:Surface>
+		<degrafa:GeometryGroup>
+			<degrafa:RoundedRectangle width="200" height="100" cornerRadius="{styleProxy.shapeCornerRadius}">
+				<degrafa:fill>
+					<degrafa:SolidFill color="{styleProxy.shapeColor}" alpha="{styleProxy.shapeAlpha}" />
+				</degrafa:fill>
+				<degrafa:stroke>
+					<degrafa:SolidStroke color="{styleProxy.shapeBorderColor}" weight="{styleProxy.shapeBorderThickness}" />
+				</degrafa:stroke>
+			</degrafa:RoundedRectangle>
+		</degrafa:GeometryGroup>
+	</degrafa:Surface>
+	
+</mx:Canvas>
