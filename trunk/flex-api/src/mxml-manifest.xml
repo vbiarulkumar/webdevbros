@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<componentPackage>
+<component id="ColorEditor" class="webdevbros.utils.editors.ColorEditor"/>
+<component id="NumberEditor" class="webdevbros.utils.editors.NumberEditor"/>
+<component id="Editor" class="webdevbros.utils.editors.Editor"/>
+<component id="FullScreenButton" class="webdevbros.utils.misc.FullScreenButton"/>
+</componentPackage>

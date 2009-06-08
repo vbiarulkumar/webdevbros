@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Editor 
+	xmlns="http://www.webdevbros.net/"
+	xmlns:mx="http://www.adobe.com/2006/mxml" >
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.events.ColorPickerEvent;
+			
+			public var preview:Boolean = false; 
+			
+			private function onCreationComplete(event:Event):void {
+				event.target.selectedColor = value;
+			}
+			
+			private function onChange(event:Event):void {
+				value = event.target.selectedColor;
+			}
+			
+			private function onItemRollOver(event:ColorPickerEvent):void {
+				if (preview) value = event.color;
+			}
+			
+			private function onItemRollOut(event:ColorPickerEvent):void {
+				if (preview) value = event.target.selectedColor;
+			}
+			
+			
+		]]>
+	</mx:Script>
+	<mx:ColorPicker
+		creationComplete="onCreationComplete(event)"
+		change="onChange(event)" 
+		itemRollOver="onItemRollOver(event)" 
+		itemRollOut="onItemRollOut(event)"/> 
+	
+</Editor>
