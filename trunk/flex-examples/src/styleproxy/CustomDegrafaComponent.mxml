@@ -38,9 +38,9 @@
 	<joshmcdonald:StyleProxy id="styleProxy" />
 	
 	<!-- The custom degrafa shape, some properties are binded to custom styles -->
-	<degrafa:Surface>
+	<degrafa:Surface y="20">
 		<degrafa:GeometryGroup>
-			<degrafa:RoundedRectangle width="200" height="100" cornerRadius="{styleProxy.shapeCornerRadius}">
+			<degrafa:RoundedRectangle width="120" height="120" cornerRadius="{styleProxy.shapeCornerRadius}">
 				<degrafa:fill>
 					<degrafa:SolidFill color="{styleProxy.shapeColor}" alpha="{styleProxy.shapeAlpha}" />
 				</degrafa:fill>
